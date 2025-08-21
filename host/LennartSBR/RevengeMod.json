@@ -1,5 +1,5 @@
 {
-  "name": "Darkened Ice AMOLED MOD",
+  "name": "Darkened Ice AMOLED",
   "description": "A pure black AMOLED theme with cyan accents + custom wallpaper.",
   "authors": [
     {
@@ -7,35 +7,35 @@
     }
   ],
   "semanticColors": {
-    "HEADER_PRIMARY": "#FFFFFF",
-    "HEADER_SECONDARY": "#B0BEC5",
-    "TEXT_NORMAL": "#ECEFF1",
-    "TEXT_MUTED": "#90A4AE",
-    "TEXT_LINK": "#08D9D6",
-    "BACKGROUND_PRIMARY": "#000000",
-    "BACKGROUND_SECONDARY": "#000000",
-    "BACKGROUND_SECONDARY_ALT": "#000000",
-    "BACKGROUND_TERTIARY": "#000000",
-    "BACKGROUND_ACCENT": "#08D9D6",
-    "BACKGROUND_FLOATING": "#000000",
-    "BACKGROUND_NESTED_FLOATING": "#000000",
-    "BACKGROUND_MESSAGE_HOVER": "#111111",
-    "BACKGROUND_MESSAGE_ACTIVE": "#111111",
-    "BACKGROUND_MENTIONED": "#111111",
-    "BACKGROUND_MENTIONED_HOVER": "#1A1A1A",
-    "BACKGROUND_MODIFIER_ACCENT": "#08D9D6",
-    "BACKGROUND_MODIFIER_ACTIVE": "#111111",
-    "BACKGROUND_MODIFIER_HOVER": "#111111",
-    "BACKGROUND_MODIFIER_SELECTED": "#08D9D6",
-    "CHANNELS_DEFAULT": "#B0BEC5",
-    "CHANNEL_ICON": "#08D9D6",
-    "CHANNEL_TEXT_AREA_PLACEHOLDER": "#90A4AE",
-    "CONTROL_BRAND_FOREGROUND": "#08D9D6",
-    "CONTROL_BRAND_FOREGROUND_NEW": "#08D9D6",
-    "STATUS_ONLINE": "#08D9D6",
-    "STATUS_DND": "#FF1744",
-    "STATUS_IDLE": "#FFAB00",
-    "STATUS_OFFLINE": "#607D8B"
+    "HEADER_PRIMARY": ["#FFFFFF"],
+    "HEADER_SECONDARY": ["#B0BEC5"],
+    "TEXT_NORMAL": ["#ECEFF1"],
+    "TEXT_MUTED": ["#90A4AE"],
+    "TEXT_LINK": ["#08D9D6"],
+    "BACKGROUND_PRIMARY": ["#000000"],
+    "BACKGROUND_SECONDARY": ["#000000"],
+    "BACKGROUND_SECONDARY_ALT": ["#000000"],
+    "BACKGROUND_TERTIARY": ["#000000"],
+    "BACKGROUND_ACCENT": ["#08D9D6"],
+    "BACKGROUND_FLOATING": ["#000000"],
+    "BACKGROUND_NESTED_FLOATING": ["#000000"],
+    "BACKGROUND_MESSAGE_HOVER": ["#111111"],
+    "BACKGROUND_MESSAGE_ACTIVE": ["#111111"],
+    "BACKGROUND_MENTIONED": ["#111111"],
+    "BACKGROUND_MENTIONED_HOVER": ["#1A1A1A"],
+    "BACKGROUND_MODIFIER_ACCENT": ["#08D9D6"],
+    "BACKGROUND_MODIFIER_ACTIVE": ["#111111"],
+    "BACKGROUND_MODIFIER_HOVER": ["#111111"],
+    "BACKGROUND_MODIFIER_SELECTED": ["#08D9D6"],
+    "CHANNELS_DEFAULT": ["#B0BEC5"],
+    "CHANNEL_ICON": ["#08D9D6"],
+    "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#90A4AE"],
+    "CONTROL_BRAND_FOREGROUND": ["#08D9D6"],
+    "CONTROL_BRAND_FOREGROUND_NEW": ["#08D9D6"],
+    "STATUS_ONLINE": ["#08D9D6"],
+    "STATUS_DND": ["#FF1744"],
+    "STATUS_IDLE": ["#FFAB00"],
+    "STATUS_OFFLINE": ["#607D8B"]
   },
   "rawColors": {
     "PRIMARY_DARK": "#000000",
@@ -58,7 +58,7 @@
     "mentionLineColor": "#08D9D6"
   },
   "background": {
-    "url": "https://raw.githubusercontent.com/jamlotrasoiaf/ThemesCorrected/refs/heads/main/ClearVision/Vendetta/dark.jpg",
-    "alpha": 1
-  }
+  "url": "https://raw.githubusercontent.com/LennartSBR/LennartSBR.github.io/refs/heads/main/host/LennartSBR/IMG_20250726_170007.png",
+  "alpha": 1
+}
 }
