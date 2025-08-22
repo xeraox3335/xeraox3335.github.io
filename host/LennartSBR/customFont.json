@@ -4,11 +4,13 @@
     "entries": [
       {
         "postscriptName": "Universo Stencil + OMEGLE",
-        "url": "https://lennartsbr.github.io/assets/fonts/UniversoStencilPlusOMEGLE.woff2"
+        "url": "https://lennartsbr.github.io/assets/fonts/UniversoStencilPlusOMEGLE.woff2",
+        "spec": 400
       },
       {
         "postscriptName": "Archivo",
-        "url": "https://lennartsbr.github.io/assets/fonts/Archivo.woff2"
+        "url": "https://lennartsbr.github.io/assets/fonts/Archivo.woff2",
+        "spec": 900
       }
     ]
   }
