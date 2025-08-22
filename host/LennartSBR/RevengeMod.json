@@ -1,64 +1,64 @@
 {
-  "name": "Darkened Ice AMOLED",
-  "description": "A pure black AMOLED theme with cyan accents + custom wallpaper.",
+  "name": "Darkened Ice AMOLED (Blue-Black Edition)",
+  "description": "A pure black AMOLED theme with subtle blue-black accents + custom wallpaper.",
   "authors": [
     {
       "name": "Purple_Ξye™ (AMOLED Mod by Lennart)"
     }
   ],
   "semanticColors": {
-    "HEADER_PRIMARY": ["#FFFFFF"],
-    "HEADER_SECONDARY": ["#B0BEC5"],
-    "TEXT_NORMAL": ["#ECEFF1"],
-    "TEXT_MUTED": ["#90A4AE"],
-    "TEXT_LINK": ["#08D9D6"],
+    "HEADER_PRIMARY": ["#D0D6E0"],
+    "HEADER_SECONDARY": ["#7A8895"],
+    "TEXT_NORMAL": ["#A9B4C0"],
+    "TEXT_MUTED": ["#5A6370"],
+    "TEXT_LINK": ["#3949AB"],
     "BACKGROUND_PRIMARY": ["#000000"],
     "BACKGROUND_SECONDARY": ["#000000"],
     "BACKGROUND_SECONDARY_ALT": ["#000000"],
     "BACKGROUND_TERTIARY": ["#000000"],
-    "BACKGROUND_ACCENT": ["#08D9D6"],
+    "BACKGROUND_ACCENT": ["#1A237E"],
     "BACKGROUND_FLOATING": ["#000000"],
     "BACKGROUND_NESTED_FLOATING": ["#000000"],
-    "BACKGROUND_MESSAGE_HOVER": ["#111111"],
-    "BACKGROUND_MESSAGE_ACTIVE": ["#111111"],
-    "BACKGROUND_MENTIONED": ["#111111"],
-    "BACKGROUND_MENTIONED_HOVER": ["#1A1A1A"],
-    "BACKGROUND_MODIFIER_ACCENT": ["#08D9D6"],
-    "BACKGROUND_MODIFIER_ACTIVE": ["#111111"],
-    "BACKGROUND_MODIFIER_HOVER": ["#111111"],
-    "BACKGROUND_MODIFIER_SELECTED": ["#08D9D6"],
-    "CHANNELS_DEFAULT": ["#B0BEC5"],
-    "CHANNEL_ICON": ["#08D9D6"],
-    "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#90A4AE"],
-    "CONTROL_BRAND_FOREGROUND": ["#08D9D6"],
-    "CONTROL_BRAND_FOREGROUND_NEW": ["#08D9D6"],
-    "STATUS_ONLINE": ["#08D9D6"],
-    "STATUS_DND": ["#FF1744"],
-    "STATUS_IDLE": ["#FFAB00"],
-    "STATUS_OFFLINE": ["#607D8B"]
+    "BACKGROUND_MESSAGE_HOVER": ["#080A10"],
+    "BACKGROUND_MESSAGE_ACTIVE": ["#0D0F16"],
+    "BACKGROUND_MENTIONED": ["#10131A"],
+    "BACKGROUND_MENTIONED_HOVER": ["#161A22"],
+    "BACKGROUND_MODIFIER_ACCENT": ["#283593"],
+    "BACKGROUND_MODIFIER_ACTIVE": ["#0D0F16"],
+    "BACKGROUND_MODIFIER_HOVER": ["#080A10"],
+    "BACKGROUND_MODIFIER_SELECTED": ["#3949AB"],
+    "CHANNELS_DEFAULT": ["#7A8895"],
+    "CHANNEL_ICON": ["#3949AB"],
+    "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#5A6370"],
+    "CONTROL_BRAND_FOREGROUND": ["#3949AB"],
+    "CONTROL_BRAND_FOREGROUND_NEW": ["#3949AB"],
+    "STATUS_ONLINE": ["#3949AB"],
+    "STATUS_DND": ["#D32F2F"],
+    "STATUS_IDLE": ["#F9A825"],
+    "STATUS_OFFLINE": ["#37474F"]
   },
   "rawColors": {
     "PRIMARY_DARK": "#000000",
-    "PRIMARY_MEDIUM": "#111111",
-    "PRIMARY_LIGHT": "#1A1A1A",
+    "PRIMARY_MEDIUM": "#080A10",
+    "PRIMARY_LIGHT": "#0D0F16",
     "SECONDARY_DARK": "#000000",
-    "SECONDARY_MEDIUM": "#111111",
-    "SECONDARY_LIGHT": "#1A1A1A",
-    "ACCENT": "#08D9D6",
-    "ACCENT_DARK": "#06B8B4",
-    "ACCENT_LIGHT": "#0AE2E0",
-    "ERROR": "#FF1744",
-    "WARNING": "#FFAB00",
-    "SUCCESS": "#00E676",
-    "INFO": "#29B6F6"
+    "SECONDARY_MEDIUM": "#080A10",
+    "SECONDARY_LIGHT": "#0D0F16",
+    "ACCENT": "#3949AB",
+    "ACCENT_DARK": "#1A237E",
+    "ACCENT_LIGHT": "#5C6BC0",
+    "ERROR": "#D32F2F",
+    "WARNING": "#F9A825",
+    "SUCCESS": "#00B248",
+    "INFO": "#1976D2"
   },
   "spec": 2,
   "plus": {
     "version": 0,
-    "mentionLineColor": "#08D9D6"
+    "mentionLineColor": "#3949AB"
   },
   "background": {
-  "url": "https://raw.githubusercontent.com/LennartSBR/LennartSBR.github.io/refs/heads/main/host/LennartSBR/IMG_20250726_170007.png",
-  "alpha": 0.5
-}
+    "url": "https://raw.githubusercontent.com/LennartSBR/LennartSBR.github.io/refs/heads/main/host/LennartSBR/IMG_20250726_170007.png",
+    "alpha": 0.5
+  }
 }
