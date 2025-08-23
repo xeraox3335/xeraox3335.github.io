@@ -1,16 +1,17 @@
 {
     "spec": 1,
-    "name": "Universo Stencil + Archivo",
+    "name": "Universo Stencil + Archivo (UI/Chat Mix)",
     "previewText": "UI in Stencil, Chat in Archivo Black.",
     "main": {
         "ABCGintoNord-ExtraBold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
+
         "ggsans-Bold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
         "ggsans-BoldItalic": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
         "ggsans-ExtraBold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
         "ggsans-ExtraBoldItalic": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
-        "ggsans-Medium": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
-        "ggsans-MediumItalic": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
 
+        "ggsans-Medium": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-MediumItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
         "ggsans-Normal": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
         "ggsans-NormalItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
 
@@ -19,12 +20,13 @@
 
         "NotoSans-Bold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
         "NotoSans-ExtraBold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
-        "NotoSans-Medium": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
 
+        "NotoSans-Medium": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
         "NotoSans-Normal": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
         "NotoSans-NormalItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
 
         "NotoSans-Semibold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
+
         "SourceCodePro-Semibold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf"
     }
 }
