@@ -1,17 +1,25 @@
-[
-  {
-    "name": "Stencil+Archivo",
-    "entries": [
-      {
-        "postscriptName": "Universo Stencil + OMEGLE",
-        "url": "https://lennartsbr.github.io/assets/fonts/UniversoStencilPlusOMEGLE.woff2",
-        "spec": 400
-      },
-      {
-        "postscriptName": "Archivo",
-        "url": "https://lennartsbr.github.io/assets/fonts/Archivo.woff2",
-        "spec": 900
-      }
-    ]
-  }
-]
+{
+    "spec": 1,
+    "name": "Universo+Archivo",
+    "previewText": "Universo Stencil + OMEGLE für Überschriften & Archivo Black für normalen Text.",
+    "main": {
+        "ABCGintoNord-ExtraBold": "https://lennartsbr.github.io/assets/UniversoStencil+OMEGLE-Stencil.ttf",
+        "ggsans-Bold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-BoldItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-ExtraBold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-ExtraBoldItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-Medium": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-MediumItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-Normal": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-NormalItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-Semibold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "ggsans-SemiboldItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "NotoSans-Bold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "NotoSans-ExtraBold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "NotoSans-Medium": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "NotoSans-Normal": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "NotoSans-NormalItalic": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "NotoSans-Semibold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf",
+        "SourceCodePro-Semibold": "https://lennartsbr.github.io/assets/ArchivoBlack-Regular.ttf"
+    }
+}
