@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XeraoX's Homepage</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f0f0f;
+      --surface:   #1a1a1a;
+      --border:    #2e2e2e;
+      --accent:    #7c6af7;
+      --accent-h:  #9b8eff;
+      --text:      #e0e0e0;
+      --muted:     #888;
+      --radius:    8px;
+      --nav-h:     56px;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-h); text-decoration: underline; }
+
+    /* ── Nav ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-right: auto;
+    }
+
+    nav a {
+      font-size: 0.92rem;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    /* ── Main / Content ───────────────────────────────────────── */
+    #content {
+      max-width: 860px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem;
+      min-height: calc(100vh - var(--nav-h) - 2.5rem);
+    }
+
+    /* ── Loading spinner ──────────────────────────────────────── */
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 0;
+    }
+
+    .loader::after {
+      content: '';
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Fade-in transition ───────────────────────────────────── */
+    .fade-in {
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="brand">⬡ XeraoX</span>
+    <a href="/" data-route="/">Home</a>
+    <a href="/about" data-route="/about">About</a>
+    <a href="/contact" data-route="/contact">Contact</a>
+  </nav>
+
+  <div id="content">
+    <div class="loader"></div>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> XeraoX &mdash; Purely Static
+  </footer>
+
+  <script>
+    /* ── Router ───────────────────────────────────────────────── */
+    (() => {
+      'use strict';
+
+      const content   = document.getElementById('content');
+      const navLinks  = document.querySelectorAll('nav a[data-route]');
+      const cache     = new Map();
+
+      /* Map URL path → file inside /files/ */
+      function pathToFile(path) {
+        const normalizedPath = path.replace(/\/$/, '') || '/';
+        const pagePath = normalizedPath === '/' ? '/home' : normalizedPath;
+        return `/files${pagePath}.html`;
+      }
+
+      /* Highlight the active nav link */
+      function setActiveNav(path) {
+        const normalised = path.replace(/\/$/, '') || '/';
+        navLinks.forEach(a => {
+          const route = a.dataset.route.replace(/\/$/, '') || '/';
+          a.classList.toggle('active', route === normalised);
+        });
+      }
+
+      /* Render HTML into #content with a fade */
+      function render(html) {
+        content.innerHTML = html;
+
+        /* Re-execute any <script> tags in the loaded content
+           (innerHTML does not run scripts automatically) */
+        content.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          Array.from(oldScript.attributes).forEach(attr =>
+            newScript.setAttribute(attr.name, attr.value)
+          );
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+
+        content.classList.remove('fade-in');
+        // Force reflow to restart animation
+        void content.offsetWidth;
+        content.classList.add('fade-in');
+
+        /* Re-intercept any links inside the loaded page */
+        interceptLinks(content);
+      }
+
+      /* Load a page by URL path */
+      async function navigate(path, push = true) {
+        setActiveNav(path);
+
+        if (push) {
+          history.pushState({ path }, '', path);
+        }
+
+        /* Serve from cache if available */
+        if (cache.has(path)) {
+          render(cache.get(path));
+          return;
+        }
+
+        /* Show spinner while loading */
+        content.innerHTML = '<div class="loader"></div>';
+
+        const file = pathToFile(path);
+        try {
+          const res = await fetch(file);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const html = await res.text();
+          cache.set(path, html);
+          render(html);
+        } catch (err) {
+          console.warn('Failed to load page:', path, err);
+          const notFound = `
+            <section style="text-align:center;padding:4rem 1rem;">
+              <h1 style="font-size:5rem;font-weight:800;color:var(--accent);line-height:1">404</h1>
+              <p style="font-size:1.25rem;margin:.75rem 0 1.5rem;color:var(--muted)">
+                Page not found
+              </p>
+              <p style="margin-bottom:2rem;color:var(--muted)">
+                The page <code style="background:var(--surface);padding:.15em .4em;border-radius:4px">${path}</code>
+                does not exist.
+              </p>
+              <a href="/" data-route="/" style="background:var(--accent);color:#fff;padding:.55rem 1.4rem;border-radius:var(--radius);font-weight:600;">
+                Go Home
+              </a>
+            </section>`;
+          cache.set(path, notFound);
+          render(notFound);
+        }
+      }
+
+      /* Returns true for links that should NOT be handled by the router */
+      function isExternalLink(href) {
+        return !href || href.startsWith('http') || href.startsWith('//') || href.startsWith('#');
+      }
+
+      /* Intercept clicks on internal links */
+      function interceptLinks(root) {
+        root.querySelectorAll('a[href]').forEach(a => {
+          if (isExternalLink(a.getAttribute('href'))) return;
+          a.addEventListener('click', e => {
+            e.preventDefault();
+            navigate(new URL(a.href, location.origin).pathname);
+          });
+        });
+      }
+
+      /* Handle browser back / forward */
+      window.addEventListener('popstate', e => {
+        const path = (e.state && e.state.path) || location.pathname;
+        navigate(path, false);
+      });
+
+      /* Intercept nav links */
+      navLinks.forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          navigate(a.dataset.route);
+        });
+      });
+
+      /* Initial load — honour GitHub Pages 404.html redirect */
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const redirectPath = sessionStorage.getItem('spa:redirect');
+      if (redirectPath && redirectPath !== location.pathname) {
+        sessionStorage.removeItem('spa:redirect');
+        navigate(redirectPath, true);
+      } else {
+        navigate(location.pathname, false);
+      }
+    })();
+  </script>
+</body>
+</html>
