@@ -1,0 +1,11 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run http-server (fallback 404)",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "http-server . -c-1 --fallback 404.html"
+		}
+	]
+}
