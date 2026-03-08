@@ -43,7 +43,7 @@
         e.preventDefault();
         const feedback = document.getElementById('formFeedback');
         if (feedback) {
-          feedback.textContent = '✓ Thanks! Your message was received (demo only).';
+          feedback.textContent = '✓ Lorem ipsum dolor sit amet (placeholder only).';
           feedback.focus();
         }
         contactForm.reset();
@@ -81,14 +81,14 @@
         <section class="not-found">
           <h1 class="not-found__code">404</h1>
           <p class="not-found__title">
-            Page not found
+            Lorem not found
           </p>
           <p class="not-found__text">
-            The page <code class="not-found__path">${path}</code>
-            does not exist.
+            Lorem path <code class="not-found__path">${path}</code>
+            ipsum dolor sit amet.
           </p>
           <a href="/" data-route="/" class="btn btn-primary">
-            Go Home
+            Lorem Home
           </a>
         </section>`;
       cache.set(path, notFound);
