@@ -98,7 +98,12 @@
 
   /* Returns true for links that should NOT be handled by the router */
   function isExternalLink(href) {
-    return !href || href.startsWith('http') || href.startsWith('//') || href.startsWith('#');
+    return (
+      !href ||
+      href.startsWith('//') ||
+      href.startsWith('#') ||
+      /^[a-z][a-z\d+.-]*:/i.test(href)
+    );
   }
 
   /* Intercept clicks on internal links */
