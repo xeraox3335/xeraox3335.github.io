@@ -81,14 +81,14 @@
         <section class="not-found">
           <h1 class="not-found__code">404</h1>
           <p class="not-found__title">
-            Lorem not found
+            Page not found :(
           </p>
           <p class="not-found__text">
-            Lorem path <code class="not-found__path">${path}</code>
-            ipsum dolor sit amet.
+            We couldn't find <code class="not-found__path">${path}</code>
+             Please contact us if you think this is a mistake.
           </p>
           <a href="/" data-route="/" class="btn btn-primary">
-            Lorem Home
+            Go Home
           </a>
         </section>`;
       cache.set(path, notFound);
