@@ -20,6 +20,11 @@
       const route = a.dataset.route.replace(/\/$/, '') || '/';
       a.classList.toggle('active', route === normalised);
     });
+
+    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+      const hasActiveChild = !!dropdown.querySelector('.nav-dropdown__menu a.active');
+      dropdown.classList.toggle('active', hasActiveChild);
+    });
   }
 
   /* Render HTML into #content with a fade */
@@ -130,6 +135,39 @@
       navigate(a.dataset.route);
     });
   });
+
+  /* My Work nav dropdown (click to open) */
+  const navDropdown = document.querySelector('.nav-dropdown');
+  const navDropdownToggle = navDropdown && navDropdown.querySelector('.nav-dropdown__toggle');
+
+  if (navDropdown && navDropdownToggle) {
+    navDropdownToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = navDropdown.classList.toggle('open');
+      navDropdownToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navDropdown.querySelectorAll('.nav-dropdown__menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navDropdown.classList.remove('open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', e => {
+      if (!navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        navDropdown.classList.remove('open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   /* Initial load — honour GitHub Pages 404.html redirect */
   document.getElementById('year').textContent = new Date().getFullYear();
